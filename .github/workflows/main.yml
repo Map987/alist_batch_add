@@ -26,7 +26,7 @@ jobs:
       run: ./alist admin set NEW_PASSWORD
     - name: Run Python script
       run: |
-        cd alist_batch_add
+        
         python mai.py
 
 
