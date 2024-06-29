@@ -22,6 +22,7 @@ jobs:
         chmod +x alist
     - name: Clone alist_batch_add repository
       run: git clone https://github.com/yzbtdiy/alist_batch_add.git
+           pip install -r requirements.txt
     - name: Set new password for Alist admin
       run: ./alist admin set NEW_PASSWORD
     - name: Run Python script
