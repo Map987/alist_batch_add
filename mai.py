@@ -22,7 +22,7 @@ with open(config_path, 'w') as f:
 import subprocess
 
 # 执行main.py脚本
-main_py_process = subprocess.Popen(['python', '/content/alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+main_py_process = subprocess.Popen(['python', './alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # 等待main.py脚本执行完成，并获取输出
 stdout, stderr = main_py_process.communicate()
