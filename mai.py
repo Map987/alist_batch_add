@@ -19,7 +19,7 @@ with open(config_path, 'w') as f:
     yaml.safe_dump(config, f)
 
 # 执行main.py脚本
-main_py_process = subprocess.Popen(['python', '/content/alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+main_py_process = subprocess.Popen(['python', '/alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # 等待main.py脚本执行完成
 main_py_process.communicate()
