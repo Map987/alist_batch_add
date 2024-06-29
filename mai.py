@@ -3,13 +3,13 @@ import time
 import yaml
 
 # 启动alist服务
-alist_process = subprocess.Popen(['/content/alist', 'server'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+alist_process = subprocess.Popen(['/alist', 'server'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # 等待alist服务启动
 time.sleep(5)  # 等待5秒，以确保alist服务有足够的时间启动
 
 # 修改config.yaml文件
-config_path = '/content/alist_batch_add/config.yaml'
+config_path = '/alist_batch_add/config.yaml'
 with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
     config['auth']['username'] = 'admin'
