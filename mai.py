@@ -19,9 +19,22 @@ with open(config_path, 'w') as f:
     yaml.safe_dump(config, f)
 
 # 执行main.py脚本
-main_py_process = subprocess.Popen(['python', './alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+import subprocess
 
-# 等待main.py脚本执行完成
-main_py_process.communicate()
+# 执行main.py脚本
+main_py_process = subprocess.Popen(['python', '/content/alist_batch_add/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+# 等待main.py脚本执行完成，并获取输出
+stdout, stderr = main_py_process.communicate()
+
+# 将输出转换为字符串并打印
+stdout_str = stdout.decode('utf-8')
+stderr_str = stderr.decode('utf-8')
+
+print("STDOUT:")
+print(stdout_str)
+
+print("STDERR:")
+print(stderr_str)
 
 # 注意：这里没有等待alist服务停止，如果您需要在完成后停止服务，可以使用alist_process.terminate()
