@@ -14,6 +14,7 @@ with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
     config['auth']['username'] = 'admin'
     config['auth']['password'] = 'NEW_PASSWORD'
+    config['auth']['ALIST_URL'] = '127.0.0.1:5244'
 
 with open(config_path, 'w') as f:
     yaml.safe_dump(config, f)
